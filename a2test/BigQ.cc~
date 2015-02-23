@@ -1,0 +1,20 @@
+#include "BigQ.h"
+
+BigQ :: BigQ (Pipe &in, Pipe &out, OrderMaker &sortorder, int runlen) {
+	// read data from in pipe sort them into runlen pages
+   Record *newRecord;   
+	cout << "Ruunin";
+   while(in.Remove(newRecord)){
+	    cout<<"Hello";
+		out.Insert(newRecord);
+		
+		}
+    // construct priority queue over sorted runs and dump sorted data 
+ 	// into the out pipe
+
+    // finally shut down the out pipe
+	out.ShutDown ();
+}
+
+BigQ::~BigQ () {
+}
